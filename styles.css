@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    scroll-behavior: smooth;
+    color: burlywood;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(55deg, rgb(160, 107, 10), rgb(133, 55, 19));
+}
+nav{
+    padding: 20px 40px;
+    box-shadow: 0 0 5px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: linear-gradient(55deg, rgb(160, 107, 10), rgb(133, 55, 19));
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navlinks a{
+    text-decoration: none;
+    position: relative;
+    color: burlywood;
+    margin: 0 20px;
+}
+.navlinks a::after{
+    content: "";
+    background-color: burlywood;
+    transition: 0.5s;
+    border-radius: 20px;
+    height: 4px;
+    width: 0;
+    bottom: -5px;
+    left: 0;
+    position: absolute;
+}
+.navlinks a:hover::after{
+    width: 100%;
+}
+#home{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(/How\ to\ make\ a\ kick-ass\ Roast\ Chicken.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.glassmorphism-container{
+    padding: 20px;
+    width: 100vh;
+    height: 60vh;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blurred background */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Border to enhance glass effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    border-radius: 15px; /* Optional: Extra rounding for a softer look */
+}
+.home-name{
+    font-size: 4em;
+    margin: 10px;
+    color: rgb(83, 41, 6);
+    font-weight: bold;
+    text-align: center;
+}
+#home button{
+    padding: 15px 30px;
+    border-radius: 25px;
+    background-color: rgb(119, 35, 20);
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+#about, #categories{
+    padding: 40px;
+}
+.about-child{
+    width: 330px;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+}
+.about-child img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+.about-child p{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    width: 100%;
+    border-radius: 0 0 15px 15px;
+    color: black;
+}
+.container{    
+    width: 100%;
+    overflow-x: scroll; 
+    scrollbar-width: none;
+}
+.food{
+    display: flex;
+    scrollbar-width: 0;
+    scroll-behavior: smooth;
+    width: fit-content;
+}
+.food-child{
+    width: 330px;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+.food-child img{
+    width: 100%;
+    border-radius: 15px;
+    height: 100%;
+    transition: 0.5s;
+}
+.food-child img:hover{
+    scale: 1.1;
+}
+#contact{
+    padding: 20px;
+}
+
+#side-nav{
+    height: 100%;
+    width: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 60px;
+    opacity: 0.8;
+    z-index: 1;
+}
+.close{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    margin-left: 50px;
+    font-size: 40px;
+}
+.side-nav a{
+    padding: 20px;
+    font-size: 30px;
+    text-decoration: none;
+    display: block;
+    color: white;
+    transition: 0.5s;
+}
+.side-nav a:hover{
+    color: rgb(147, 177, 177);
+}
+@media screen and (max-width:700px) {
+    .menu,
+    .sidebar {
+      display: block;
+    }
+    nav{
+        padding: 15px 5px;
+    }
+    .navlinks {
+      display: none;
+    }
+    #about, #categories{
+        padding: 10px;
+    }
+    .about-child{
+        width: 100%;
+        display: block;
+        margin: 10px 0;
+    }
+}
+@media screen and (min-width:700px) {
+    .menu,
+    .sidebar {
+      display: none;
+    }
+    .navlinks {
+      display: flex;
+    }
+}
